@@ -28,10 +28,22 @@ function render(variables = {}) {
   // if includeCover==false then we reset the cover code without the <img> tag to make the cover transparent.
   let cover = `<div class="cover"><img src="${variables.background}" /></div>`;
   if (variables.includeCover == false) cover = "<div class='cover'></div>";
-  
+
+  let name = "Elsa Bado";
+  if (variables.name === null) {
+    name = "Elsa Bado";
+  } else {
+    name = variables.name;
+  }
+  career;
+  if (variables.career === null) {
+    career = "Elsa Bado";
+  } else {
+    name = variables.name;
+  }
   let country = "USA";
-  if (variables.country === null){
-  country = "USA";
+  if (variables.country === null) {
+    country = "USA";
   } else {
     country = variables.country;
   }
@@ -39,8 +51,8 @@ function render(variables = {}) {
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
-          <h1>Lucy Boilett</h1>
-          <h2>Web Developer</h2>
+          <h1>${name}</h1>
+          <h2>${career}</h2>
           <h3>Miami, ${country}</h3>
           <ul class="position-right">
             <li><a href="https://twitter.com/4geeksacademy"><i class="fab fa-twitter"></i></a></li>
